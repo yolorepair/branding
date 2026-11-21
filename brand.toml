@@ -1,0 +1,262 @@
+# YOLO Electronics Repair brand configuration
+# ──────────────────────────────────────────────────────────────────────
+#
+# This is the canonical brand-asset source of truth. Edit here and
+# re-run `make` (or `python scripts/build.py`) to regenerate every
+# downstream artifact: SVGs, PNGs, favicons, tokens, BRANDING.md tables.
+#
+# CHANGES HERE PROPAGATE EVERYWHERE. Use thoughtfully.
+
+[meta]
+name        = "YOLO Electronics Repair"
+short_name  = "YOLO Repair"
+slug        = "yolo"
+tagline     = "You let the smoke out. We put it back in."
+handle      = "@yolo.repair"
+location    = "West Sacramento, CA"
+url         = "https://yolorepair.com"
+
+# ──────────────────────────────────────────────────────────────────────
+# Color palette
+#
+# The brand is a circuit board: solder-mask blue for the board, copper
+# for anything that conducts, silkscreen off-white for anything printed
+# on top.
+# ──────────────────────────────────────────────────────────────────────
+
+[colors.board]
+blue        = "#1E4D9B"   # solder-mask blue — the primary brand color
+deep        = "#163D7E"   # deep blue — page backgrounds, pressed states
+copper      = "#E0A050"   # copper — traces, pads, the accent
+
+[colors.neutrals]
+ink         = "#F3F2EE"   # silkscreen off-white — primary text on blue
+soft        = "#D6DCEA"   # secondary text on blue
+black       = "#000000"   # one-color print only
+white       = "#FFFFFF"   # one-color print only, paper
+
+[colors.semantics]
+# Friendly names → which palette entry to use.
+primary_accent = "blue"   # the single "brand color" when only one is allowed
+
+# ──────────────────────────────────────────────────────────────────────
+# Fonts
+#
+# The families the brand is set in. The weights listed are the only ones
+# the brand uses. `make tokens` exports these alongside the palette.
+# ──────────────────────────────────────────────────────────────────────
+
+[fonts.display]
+family   = "Barlow Condensed"
+weights  = [600, 800]
+fallback = "'Arial Narrow', sans-serif"
+
+[fonts.mono]
+family   = "IBM Plex Mono"
+weights  = [400, 600]
+fallback = "ui-monospace, monospace"
+
+# ──────────────────────────────────────────────────────────────────────
+# Token export
+#
+# Downstream consumers (the site) should reference the palette, not
+# hand-copy hexes. `make tokens` emits tokens/brand.css (:root custom
+# properties) + tokens/brand.json straight from [colors.*] and [fonts.*].
+# ──────────────────────────────────────────────────────────────────────
+
+[tokens]
+css_prefix = "yolo"   # CSS custom-property namespace → --yolo-blue, --yolo-ink, …
+
+# ──────────────────────────────────────────────────────────────────────
+# The mark — the Y-trace
+#
+# A PCB trace in the shape of a Y: three pads, two 45° doglegs, and a via
+# where the branches meet. Drawn on a 560-unit grid, then scaled down
+# inside a solder-mask disc so it survives being cropped to a circle.
+#
+# Geometry is the "signature" drawing (yolo-signature-logo.png, kept in
+# _archive/). These numbers reproduce that PNG to within anti-aliasing.
+# ──────────────────────────────────────────────────────────────────────
+
+[mark]
+viewbox      = 560
+scale        = 0.78        # trace is drawn at full grid size, then shrunk…
+anchor       = [280, 290]  # …about the grid center, nudged 10 units down
+trace        = "M280 440 V300 L160 180 V120 M280 300 L400 180 V120"
+trace_width  = 40
+pads         = [[160, 110], [400, 110], [280, 450]]   # pad centers
+pad_radius   = 48
+hole_radius  = 18          # drill hole in each pad
+via          = [280, 300]  # the junction via
+via_radius   = 13
+description  = "A printed-circuit trace in the shape of a Y: three copper pads joined by a trace with a via at the fork, on a solder-mask blue disc."
+
+# ──────────────────────────────────────────────────────────────────────
+# The pulse — secondary mark
+#
+# A trace with a heartbeat in it: square pad in, round pad out. Lifted
+# from the business cards. Two forms share the idea but not the drawing:
+# the roundel here (a standalone icon) and the long rule under the
+# wordmark (see [wordmark.pulse]).
+# ──────────────────────────────────────────────────────────────────────
+
+[pulse]
+viewbox      = 300
+trace        = "M52 150 H100 L118 108 L142 200 L166 82 L186 150 H222"
+trace_width  = 16
+square_pad   = [34, 139, 18, 22, 3]   # x, y, width, height, corner radius
+round_pad    = [246, 150]             # center
+pad_radius   = 20
+hole_radius  = 8
+description  = "A circuit trace with a heartbeat spike in it, running from a square pad to a round pad, on a solder-mask blue disc."
+
+# ──────────────────────────────────────────────────────────────────────
+# Wordmark
+#
+# "YOLO" with both O's replaced by copper pads, "ELECTRONICS REPAIR"
+# letterspaced underneath, and the pulse trace as a rule below that.
+# Laid out in the business card's own pixel grid (the card is 336×192),
+# so every number here can be checked against print/*.pdf.
+# ──────────────────────────────────────────────────────────────────────
+
+[wordmark]
+viewbox       = [8, 41, 320, 144]   # x, y, width, height — crop of the card grid
+aria_label    = "YOLO Electronics Repair"
+
+[wordmark.name]
+# The glyph outlines are derived from this exact font, vendored in-repo
+# (OFL) so the build is reproducible. Only Y and L are type — the O's are
+# pads.
+font_path     = "fonts/BarlowCondensed-ExtraBold.ttf"
+font_size     = 64
+baseline      = 96
+letters       = [["Y", 86.766], ["L", 172.266]]   # glyph, x origin
+pads          = [[145, 71], [227, 71]]            # the two O's, as pad centers
+pad_radius    = 21.12
+hole_radius   = 8.36
+
+[wordmark.descriptor]
+text           = "ELECTRONICS REPAIR"
+font_path      = "fonts/IBMPlexMono-SemiBold.ttf"
+font_size      = 12
+letter_spacing = 2.4      # 0.2em
+x              = 81.594
+baseline       = 115
+
+[wordmark.pulse]
+trace        = "M22 163 H178 L187 150 L197 175 L207 141 L215 163 H302"
+trace_width  = 2.6
+square_pad   = [15, 158, 7, 10, 1.5]       # x, y, width, height, corner radius
+round_pad    = [311, 163]
+pad_radius   = 6.5
+hole_radius  = 2.5
+
+# ──────────────────────────────────────────────────────────────────────
+# Lockup (mark + wordmark side-by-side)
+# ──────────────────────────────────────────────────────────────────────
+
+[lockup]
+gap = 20   # space between the mark and the wordmark, in wordmark units
+
+# ──────────────────────────────────────────────────────────────────────
+# Output sizes
+#
+# Standard dimensions for raster exports. Add new entries here, run
+# the build, and the new sizes appear automatically.
+# ──────────────────────────────────────────────────────────────────────
+
+[sizes.mark]
+px = [32, 64, 128, 256, 460, 512, 1024]
+
+[sizes.pulse]
+px = [64, 256, 512, 1024]
+
+[sizes.lockup]
+px = [400, 800, 1200, 2400]
+
+[sizes.wordmark]
+px = [200, 400, 800, 1600]
+
+[sizes.favicon]
+px = [16, 32, 48, 64, 192, 512]
+ico_sizes = [16, 32, 48, 64]   # multi-resolution .ico bundle
+touch_px  = 180                # apple-touch-icon — square, full-bleed, no transparency
+
+# ──────────────────────────────────────────────────────────────────────
+# Open Graph / social-share cards
+#
+# The image link-unfurlers (iMessage, Slack, Discord, Facebook) pull.
+# The dark-bg wordmark centered on solder-mask blue with the tagline
+# underneath. `make og` renders one PNG per size.
+# ──────────────────────────────────────────────────────────────────────
+
+[og]
+background        = "blue"       # full-bleed background color (palette key)
+wordmark_variant  = "dark_bg"    # which wordmark treatment to center
+wordmark_width    = 0.6          # wordmark width as a fraction of the card width
+tagline_font_path = "fonts/BarlowCondensed-SemiBold.ttf"
+tagline_size      = 0.07         # tagline font size as a fraction of the card height
+tagline_color     = "ink"
+tagline_gap       = 0.04         # space between wordmark and tagline, fraction of card height
+
+[og.sizes]
+# name = [width, height]
+web    = [1200, 630]   # og:image / Twitter summary_large_image
+github = [1280, 640]   # GitHub repo + org social preview (2:1)
+
+# ──────────────────────────────────────────────────────────────────────
+# Web app manifest + maskable icons
+#
+# `make manifest` emits a site.webmanifest template plus maskable icons.
+# The square tile is already maskable-safe — the trace sits well inside
+# Android's 80% safe circle — so the maskable icons are just the tile.
+# ──────────────────────────────────────────────────────────────────────
+
+[manifest]
+name             = "YOLO Electronics Repair"
+short_name       = "YOLO Repair"
+theme_color      = "blue"   # palette key → browser UI / address bar
+background_color = "blue"   # palette key → splash background
+display          = "browser"
+maskable_sizes   = [192, 512]
+
+# ──────────────────────────────────────────────────────────────────────
+# Variants (which color treatments to generate for which assets)
+#
+# Roles → palette keys:
+#   board  — the disc behind the mark
+#   trace  — copper: the trace, the pads, the O's in YOLO, the pulse
+#   text   — the Y and the L
+#   label  — ELECTRONICS REPAIR (blue on paper, copper on blue)
+# mode = "single" flattens everything to one color and drops the board:
+# what's left is the copper layer on its own, holes drilled clean through.
+# ──────────────────────────────────────────────────────────────────────
+
+[variants]
+[variants.color]
+purpose      = "Light backgrounds — paper, white web pages, invoices, the business cards. The default"
+mode         = "full"
+board        = "blue"
+trace        = "copper"
+text         = "blue"
+label        = "blue"
+
+[variants.dark_bg]
+# The mark carries its own blue disc, so it has no dark_bg form — this
+# variant only changes the wordmark and lockup lettering.
+purpose      = "Blue or dark backgrounds — the site, social headers, anything printed on solder-mask blue. The lettering flips to silkscreen off-white"
+mode         = "full"
+board        = "blue"
+trace        = "copper"
+text         = "ink"
+label        = "copper"
+
+[variants.mono_black]
+purpose      = "One-color black — rubber stamps, thermal receipt printers, laser engraving, fax-grade photocopies"
+mode         = "single"
+single_color = "black"
+
+[variants.mono_white]
+purpose      = "One-color white — vinyl on a dark toolbox, etched glass, a reversed stamp on a dark bag"
+mode         = "single"
+single_color = "white"
