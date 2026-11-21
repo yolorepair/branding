@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "name": "YOLO Electronics Repair",
+    "short_name": "YOLO Repair",
+    "slug": "yolo",
+    "tagline": "You let the smoke out. We put it back in."
+  },
+  "board": {
+    "blue": "#1E4D9B",
+    "deep": "#163D7E",
+    "copper": "#E0A050"
+  },
+  "neutrals": {
+    "ink": "#F3F2EE",
+    "soft": "#D6DCEA",
+    "black": "#000000",
+    "white": "#FFFFFF"
+  },
+  "semantics": {
+    "primary_accent": "#1E4D9B"
+  },
+  "fonts": {
+    "display": {
+      "family": "Barlow Condensed",
+      "weights": [
+        600,
+        800
+      ],
+      "stack": "'Barlow Condensed', 'Arial Narrow', sans-serif"
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "weights": [
+        400,
+        600
+      ],
+      "stack": "'IBM Plex Mono', ui-monospace, monospace"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+/* YOLO Electronics Repair brand tokens — generated from brand.toml by scripts/build.py.
+ * Do not edit by hand; run `make tokens`. */
+:root {
+  /* The board — solder mask and copper. */
+  --yolo-blue: #1E4D9B;
+  --yolo-deep: #163D7E;
+  --yolo-copper: #E0A050;
+  /* Neutrals. */
+  --yolo-ink: #F3F2EE;
+  --yolo-soft: #D6DCEA;
+  --yolo-black: #000000;
+  --yolo-white: #FFFFFF;
+  /* Semantic aliases. */
+  --yolo-primary-accent: var(--yolo-blue);
+  /* Font stacks. */
+  --yolo-font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --yolo-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
