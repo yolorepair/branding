@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="560" height="560" role="img" aria-label="YOLO Electronics Repair">
+  <title>YOLO Electronics Repair</title>
+  <desc>A printed-circuit trace in the shape of a Y: three copper pads joined by a trace with a via at the fork, on a solder-mask blue disc.</desc>
+  <g transform="translate(280 290) scale(0.78) translate(-280 -280)"><defs><clipPath id="yolo-mark-drill"><path d="M-560 -560H1120V1120H-560ZM142 110a18 18 0 1 0 36 0a18 18 0 1 0 -36 0ZM382 110a18 18 0 1 0 36 0a18 18 0 1 0 -36 0ZM262 450a18 18 0 1 0 36 0a18 18 0 1 0 -36 0ZM267 300a13 13 0 1 0 26 0a13 13 0 1 0 -26 0Z" clip-rule="evenodd"/></clipPath></defs><g clip-path="url(#yolo-mark-drill)"><path d="M280 440 V300 L160 180 V120 M280 300 L400 180 V120" fill="none" stroke="#000000" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/><circle cx="160" cy="110" r="48" fill="#000000"/><circle cx="400" cy="110" r="48" fill="#000000"/><circle cx="280" cy="450" r="48" fill="#000000"/></g></g>
+</svg>
