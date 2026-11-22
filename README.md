@@ -193,7 +193,12 @@ the markers alone and don't edit the version on those lines by hand.
 
 ## License
 
-The fonts in `fonts/` are under the SIL Open Font License; their license
-files sit next to them. The YOLO Electronics Repair name, marks, and
-artwork are the shop's own. The files are here so the site and its tooling
-can fetch them — not as an invitation to reuse the logo.
+Three sets of terms, spelled out in [`LICENSE`](LICENSE):
+
+- **Code** — the build scripts, `Makefile`, and CI config — is MIT.
+- **The brand** — the YOLO Electronics Repair name, the marks, `brand.toml`,
+  and everything generated or drawn from them — is the shop's own, all rights
+  reserved. The files are here so the site and its tooling can fetch them,
+  not as an invitation to reuse the logo.
+- **The fonts** in `fonts/` are under the SIL Open Font License; their
+  license files sit next to them.
