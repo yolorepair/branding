@@ -96,7 +96,7 @@ and `preview.html`.
 
 ```sh
 git submodule add https://github.com/yolorepair/branding.git branding
-git -C branding checkout v1.0.0      # pin to a release tag
+git -C branding checkout v1.0.1      # pin to a release tag
 git add branding && git commit       # the recorded submodule commit is your version pin
 ```
 
@@ -106,7 +106,7 @@ and commit the bump — a reviewable one-line diff.
 **As a downloaded bundle:**
 
 ```sh
-gh release download v1.0.0 --repo yolorepair/branding   # grabs the .zip + .tar.gz
+gh release download v1.0.1 --repo yolorepair/branding   # grabs the .zip + .tar.gz
 ```
 
 **As a pinned image URL** — for a README or a page that embeds the logo over
@@ -114,7 +114,7 @@ HTTP without vendoring a copy. Pin to a release tag, never `main`: a tag is
 immutable, so a brand update can't silently restyle your page.
 
 ```md
-<img src="https://raw.githubusercontent.com/yolorepair/branding/v1.0.0/logos/svg/yolo-lockup.svg" alt="YOLO Electronics Repair" width="480">
+<img src="https://raw.githubusercontent.com/yolorepair/branding/v1.0.1/logos/svg/yolo-lockup.svg" alt="YOLO Electronics Repair" width="480">
 ```
 
 Either way, the `logos/` directory layout and filenames are a stable contract
