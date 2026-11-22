@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/yolorepair/branding/compare/v1.0.0...v1.0.1) (2026-11-22)
+
+
+### Bug Fixes
+
+* **preview:** drop the social/ images the release bundle doesn't ship ([#6](https://github.com/yolorepair/branding/issues/6)) ([5287d1d](https://github.com/yolorepair/branding/commit/5287d1d9b4b903558193ffb6fc368754e2dee69b))
+
 ## 1.0.0 (2026-11-22)
 
 
