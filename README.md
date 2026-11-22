@@ -94,28 +94,34 @@ and `preview.html`.
 
 **As a git submodule:**
 
+<!-- x-release-please-start-version -->
 ```sh
 git submodule add https://github.com/yolorepair/branding.git branding
 git -C branding checkout v1.0.1      # pin to a release tag
 git add branding && git commit       # the recorded submodule commit is your version pin
 ```
+<!-- x-release-please-end -->
 
 To move to a newer release later, check out the new tag inside the submodule
 and commit the bump — a reviewable one-line diff.
 
 **As a downloaded bundle:**
 
+<!-- x-release-please-start-version -->
 ```sh
 gh release download v1.0.1 --repo yolorepair/branding   # grabs the .zip + .tar.gz
 ```
+<!-- x-release-please-end -->
 
 **As a pinned image URL** — for a README or a page that embeds the logo over
 HTTP without vendoring a copy. Pin to a release tag, never `main`: a tag is
 immutable, so a brand update can't silently restyle your page.
 
+<!-- x-release-please-start-version -->
 ```md
 <img src="https://raw.githubusercontent.com/yolorepair/branding/v1.0.1/logos/svg/yolo-lockup.svg" alt="YOLO Electronics Repair" width="480">
 ```
+<!-- x-release-please-end -->
 
 Either way, the `logos/` directory layout and filenames are a stable contract
 (see *Files* above), so a pin bump never moves assets out from under you.
@@ -180,6 +186,10 @@ carrying the version bump and changelog; **merge that PR to cut the release** �
 it tags `vX.Y.Z`, publishes the GitHub Release, and attaches the asset bundle.
 There's no manual `git tag` or `gh release create`. Version bumps follow
 Conventional Commits: `feat:` → minor, `fix:` → patch.
+
+The same PR bumps the version in the pinning examples under *Consuming the
+kit*. Those examples sit between `x-release-please` marker comments — leave
+the markers alone and don't edit the version on those lines by hand.
 
 ## License
 
