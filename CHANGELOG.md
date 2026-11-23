@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/yolorepair/branding/compare/v1.0.1...v1.0.2) (2026-11-23)
+
+
+### Bug Fixes
+
+* **release:** ship the license file in the release bundle ([3beb636](https://github.com/yolorepair/branding/commit/3beb63690f62c314dbcbd3786bc9b910a76bc751))
+
 ## [1.0.1](https://github.com/yolorepair/branding/compare/v1.0.0...v1.0.1) (2026-11-22)
 
 
