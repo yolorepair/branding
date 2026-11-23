@@ -90,7 +90,7 @@ For ad-hoc use, just grab a file (see *Quick start*). To consume the kit at a
 use a tagged release. Releases are versioned `vX.Y.Z` and listed on the
 [Releases page](https://github.com/yolorepair/branding/releases); each one
 ships a `.zip` / `.tar.gz` bundle of `logos/`, `tokens/`, `BRANDING.md`,
-and `preview.html`.
+`preview.html`, and `LICENSE`.
 
 **As a git submodule:**
 

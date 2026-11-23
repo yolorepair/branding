@@ -36,8 +36,8 @@ jobs:
         run: |
           tag="${{ needs.release-please.outputs.tag_name }}"
           mkdir -p dist
-          zip -r "dist/yolo-brand-kit-${tag}.zip" logos tokens BRANDING.md preview.html
-          tar -czf "dist/yolo-brand-kit-${tag}.tar.gz" logos tokens BRANDING.md preview.html
+          zip -r "dist/yolo-brand-kit-${tag}.zip" logos tokens BRANDING.md preview.html LICENSE
+          tar -czf "dist/yolo-brand-kit-${tag}.tar.gz" logos tokens BRANDING.md preview.html LICENSE
 
       - name: Upload bundle to the release
         env:
