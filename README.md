@@ -97,7 +97,7 @@ ships a `.zip` / `.tar.gz` bundle of `logos/`, `tokens/`, `BRANDING.md`,
 <!-- x-release-please-start-version -->
 ```sh
 git submodule add https://github.com/yolorepair/branding.git branding
-git -C branding checkout v1.0.1      # pin to a release tag
+git -C branding checkout v1.0.2      # pin to a release tag
 git add branding && git commit       # the recorded submodule commit is your version pin
 ```
 <!-- x-release-please-end -->
@@ -109,7 +109,7 @@ and commit the bump — a reviewable one-line diff.
 
 <!-- x-release-please-start-version -->
 ```sh
-gh release download v1.0.1 --repo yolorepair/branding   # grabs the .zip + .tar.gz
+gh release download v1.0.2 --repo yolorepair/branding   # grabs the .zip + .tar.gz
 ```
 <!-- x-release-please-end -->
 
@@ -119,7 +119,7 @@ immutable, so a brand update can't silently restyle your page.
 
 <!-- x-release-please-start-version -->
 ```md
-<img src="https://raw.githubusercontent.com/yolorepair/branding/v1.0.1/logos/svg/yolo-lockup.svg" alt="YOLO Electronics Repair" width="480">
+<img src="https://raw.githubusercontent.com/yolorepair/branding/v1.0.2/logos/svg/yolo-lockup.svg" alt="YOLO Electronics Repair" width="480">
 ```
 <!-- x-release-please-end -->
 
